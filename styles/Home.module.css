@@ -6,6 +6,7 @@
 
 .main {
   background: url("/logo.png") no-repeat fixed center;
+  background-size: contain;
   min-height: 100vh;
   padding: 4rem 0;
   flex: 1;
