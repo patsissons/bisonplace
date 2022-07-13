@@ -13,13 +13,15 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to Bison Place
-        </h1>
+        <div className={styles.text}>
+          <h1 className={styles.title}>
+            Welcome to Bison Place
+          </h1>
 
-        <p className={styles.description}>
-          coming soon...
-        </p>
+          <p className={styles.description}>
+            coming soon...
+          </p>
+        </div>
       </main>
     </div>
   )
