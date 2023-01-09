@@ -4,7 +4,7 @@
 }
 
 .main {
-  background: url("/logo.png") no-repeat fixed center;
+  background: url("/logo.svg") no-repeat fixed center;
   background-size: contain;
   min-height: 100vh;
   flex: 1;
@@ -26,7 +26,6 @@
 
 .title {
   margin: 0;
-  line-height: 1.15;
   font-size: 4rem;
 }
 
