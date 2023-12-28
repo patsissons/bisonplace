@@ -2,23 +2,57 @@
   "name": "bisonplace",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "pnpm": ">=8",
+    "node": "^18.17.1"
+  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "clean": "rimraf ./.svelte-kit",
+    "prepare": "svelte-kit sync",
+    "dev": "pnpm prepare && vite dev",
+    "build": "pnpm prepare && vite build",
+    "preview": "vite preview",
+    "lint:prettier": "prettier --check .",
+    "lint:style": "stylelint 'src/**/*.{css,scss,svelte}'",
+    "lint:es": "pnpm prepare && eslint .",
+    "lint": "pnpm lint:prettier && pnpm lint:style && pnpm lint:es",
+    "validate:svelte": "pnpm prepare && svelte-check --tsconfig ./tsconfig.json",
+    "validate:svelte:watch": "pnpm prepare && svelte-check --tsconfig ./tsconfig.json --watch",
+    "validate:ts": "pnpm prepare && tsc --noEmit",
+    "validate": "pnpm validate:ts && pnpm validate:svelte",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "next": "12.2.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@fontsource/orbitron": "^5.0.18",
+    "svelte": "^5.0.0-next.1",
+    "tailwindcss": "^3.3.6"
   },
   "devDependencies": {
-    "@types/node": "18.0.3",
-    "@types/react": "18.0.15",
-    "@types/react-dom": "18.0.6",
-    "eslint": "8.19.0",
-    "eslint-config-next": "12.2.2",
-    "typescript": "4.7.4"
-  }
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@types/eslint": "8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-svelte": "^2.35.1",
+    "postcss": "^8.4.32",
+    "postcss-html": "^1.5.0",
+    "postcss-load-config": "^4.0.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "rimraf": "^5.0.5",
+    "stylelint": "^16.0.1",
+    "stylelint-config-standard": "^35.0.0",
+    "stylelint-config-tailwindcss": "^0.0.7",
+    "stylelint-order": "^6.0.4",
+    "svelte-check": "^3.6.0",
+    "tslib": "^2.4.1",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.3"
+  },
+  "type": "module"
 }
