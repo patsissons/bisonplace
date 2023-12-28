@@ -1,10 +1,30 @@
 <script lang="ts">
-  let { ...props } = $props()
+  let {
+    fg = '#d1d2d4',
+    bg = '#838484',
+    horns = bg,
+    ...props
+  } = $props<{
+    fg?: string
+    bg?: string
+    horns?: string
+    class?: string
+  }>()
 </script>
 
 <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" {...props}>
-  <path
-    fill="currentcolor"
-    d="M20.07,40L46.57,12l-10.5,24,10.5,8-14.5,20-12-24Zm120,0l-26.5-28,10.5,24-10.5,8,14.5,20,12-24Zm-12,26l-12,42-4,32-32,8-32-8-4-32-12-42,16-22,32-4,32,4,16,22Zm-72,22h16l-20-12,4,12Zm20,48l-10-6,2,4,8,2Zm18-6l-10,6,8-2,2-4Zm14-54l-20,12h16s4-12,4-12Zm-16.08-22l-11.92-2-12,2h10s2,70,2,70l2-70h9.92Z"
+  <polygon
+    fill={bg}
+    points="128.1,66 116.1,108 112.1,140 80.1,148 48.1,140 44.1,108 32.1,66 48.1,44 80.1,40 112.1,44 "
   />
+  <polygon fill={horns} points="20.1,40 46.6,12 36.1,36 46.6,44 32.1,64 " />
+  <polygon
+    fill={horns}
+    points="140.1,40 113.6,12 124.1,36 113.6,44 128.1,64 "
+  />
+  <polygon fill={fg} points="56.1,88 72.1,88 52.1,76 " />
+  <polygon fill={fg} points="76.1,136 66.1,130 68.1,134 " />
+  <polygon fill={fg} points="94.1,130 84.1,136 92.1,134 " />
+  <polygon fill={fg} points="108.1,76 88.1,88 104.1,88 " />
+  <polygon fill={fg} points="92,54 80.1,52 68.1,54 78.1,54 80.1,124 82.1,54 " />
 </svg>

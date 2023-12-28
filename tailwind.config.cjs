@@ -13,6 +13,10 @@ module.exports = {
         bison: {
           bg: '#838484',
           fg: '#d1d2d4',
+          neon: {
+            fg: '#5EF6FF',
+            bg: '#F75049',
+          },
         },
       },
     },

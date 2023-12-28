@@ -4,6 +4,11 @@
 
 <section class="flex items-center justify-center w-full">
   <div class="h-full">
-    <Bison class="text-bison-fg h-full max-w-full min-w-[320px]" />
+    <Bison
+      class="h-full max-w-full min-w-[320px]"
+      fg="#5EF6FF"
+      bg="#F75049"
+      horns="#5EF6FF"
+    />
   </div>
 </section>
