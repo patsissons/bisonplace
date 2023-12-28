@@ -4,7 +4,7 @@
 html {
   text-rendering: optimizelegibility;
 
-  @apply bg-bison-bg text-bison-fg antialiased;
+  @apply antialiased;
 }
 
 body {
