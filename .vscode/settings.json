@@ -1,0 +1,24 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript", "svelte"],
+  "files.associations": {
+    "*.css": "css"
+  },
+  "css.validate": false,
+  "stylelint.validate": ["css", "postcss"],
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.svelte-kit": true,
+    "**/.vercel": true
+  },
+  "tailwindCSS.experimental.classRegex": ["[a-zA-Z]+Class *= *\"([^\"]+)\""],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

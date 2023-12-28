@@ -1,0 +1,12 @@
+@import url('./tailwind.css');
+@import url('./fonts.css');
+
+html {
+  text-rendering: optimizelegibility;
+
+  @apply bg-bison-bg text-bison-fg antialiased;
+}
+
+body {
+  @apply min-h-[100dvh] min-w-[320px];
+}
