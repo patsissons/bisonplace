@@ -31,7 +31,7 @@
 
 <section class="container mx-auto flex-1 flex flex-col items-center gap-2">
   <h3
-    class="text-bison-neon-fg text-xl font-orbitron font-semibold brightness-50"
+    class="text-bison-neon-fg text-5xl xs:text-6xl sm:text-7xl font-orbitron font-semibold brightness-50"
   >
     Menus
   </h3>

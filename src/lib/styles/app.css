@@ -6,7 +6,3 @@ html {
 
   @apply antialiased;
 }
-
-body {
-  @apply min-h-[100dvh] min-w-[320px];
-}
