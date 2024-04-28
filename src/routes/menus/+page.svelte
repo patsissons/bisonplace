@@ -3,7 +3,7 @@
   import { onMount } from 'svelte'
   import data from './menus.json'
 
-  type Menu = { fg?: string; bg?: string; name?: string }
+  type Menu = { fg?: string; bg?: string; name?: string; path?: string }
   type MenuId = keyof typeof data.menus
 
   const menuIds = Object.keys(data.menus) as MenuId[]
@@ -27,6 +27,26 @@
       selectedMenuId = data.current as MenuId
     }
   })
+
+  function menuName(menuId: MenuId) {
+    const menu = menuById(menuId)
+    if (menu.name) return menu.name
+
+    const m = /^(\d+)([WS])$/.exec(menuId)
+    if (!m) return menuId
+
+    return `${m[1]} ${menuSuffix(m[2])}`
+
+    function menuSuffix(suffix: string) {
+      switch (suffix) {
+        case 'S':
+          return 'Summer'
+        case 'W':
+        default:
+          return 'Winter'
+      }
+    }
+  }
 </script>
 
 <section class="container mx-auto flex-1 flex flex-col items-center gap-2">
@@ -37,7 +57,6 @@
   </h3>
   <nav class="flex flex-wrap items-center justify-center gap-1 px-2">
     {#each menuIds as menuId}
-      {@const menu = menuById(menuId)}
       {@const selected = menuId === selectedMenuId}
       <a
         class="bg-bison-neon-bg hover:brightness-110 text-white font-bold py-0.5 px-2 rounded"
@@ -45,15 +64,16 @@
         class:text-black={selected}
         href="#{menuId}"
       >
-        {menu.name || menuId}
+        {menuName(menuId)}
       </a>
     {/each}
   </nav>
   {#if selectedMenu}
-    <a class="flex-1 overflow-y-auto px-2" href="/menus/{selectedMenuId}.png">
+    {@const selectedMenuPath = selectedMenu.path || `${selectedMenuId}.png`}
+    <a class="flex-1 overflow-y-auto px-2" href="/menus/{selectedMenuPath}">
       <img
         class="min-w-[320px]"
-        src="/menus/{selectedMenuId}.png"
+        src="/menus/{selectedMenuPath}"
         alt="{selectedMenu.name || selectedMenuId} menu"
       />
     </a>
