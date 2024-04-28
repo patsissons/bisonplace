@@ -14,7 +14,7 @@
   <header class="text-center px-2 py-0.5">
     {#if $page.route.id === '/'}
       <h1
-        class="text-5xl xs:text-6xl sm:text-7xl text-bison-neon-bg font-orbitron font-semibold"
+        class="text-5xl xs:text-6xl sm:text-7xl text-bison-neon-bg font-orbitron font-semibold brightness-50"
       >
         Welcome to BISON Place
       </h1>
@@ -27,7 +27,7 @@
 
   <footer class="text-center px-2 py-0.5">
     <a
-      class="text-bison-neon-bg text-xl font-orbitron"
+      class="text-bison-neon-bg text-xl font-orbitron brightness-50"
       href={isMenusPage ? '/' : '/menus'}
     >
       {#if isMenusPage}

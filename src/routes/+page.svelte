@@ -6,9 +6,9 @@
   <div class="h-full">
     <Bison
       class="h-full max-w-full min-w-[320px]"
-      fg="#5EF6FF"
-      bg="#F75049"
-      horns="#5EF6FF"
+      fg="#EEE9DA"
+      bg="#6096B4"
+      horns="#EEE9DA"
     />
   </div>
 </section>
