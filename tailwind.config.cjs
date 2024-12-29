@@ -14,8 +14,8 @@ module.exports = {
           bg: '#838484',
           fg: '#d1d2d4',
           theme: {
-            fg: '#EEE9DA',
-            bg: '#6096B4',
+            fg: '#F0FFD4',
+            bg: '#102E12',
           },
         },
       },
