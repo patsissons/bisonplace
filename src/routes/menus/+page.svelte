@@ -51,7 +51,7 @@
 
 <section class="container mx-auto flex-1 flex flex-col items-center gap-2">
   <h3
-    class="text-bison-neon-bg text-5xl xs:text-6xl sm:text-7xl font-orbitron font-semibold brightness-50"
+    class="text-bison-theme-bg text-5xl xs:text-6xl sm:text-7xl font-orbitron font-semibold brightness-50"
   >
     Menus
   </h3>
@@ -59,7 +59,7 @@
     {#each menuIds as menuId}
       {@const selected = menuId === selectedMenuId}
       <a
-        class="{selected ? 'bg-bison-neon-fg' : 'bg-bison-neon-bg'} {selected
+        class="{selected ? 'bg-bison-theme-fg' : 'bg-bison-theme-bg'} {selected
           ? 'text-black'
           : 'text-white'} hover:brightness-110 font-bold py-0.5 px-2 rounded"
         href="#{menuId}"
