@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "pnpm": ">=8",
-    "node": "^18.17.1"
+    "pnpm": "^10",
+    "node": "^22"
   },
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "clean": "rimraf ./.svelte-kit",
     "prepare": "svelte-kit sync",
