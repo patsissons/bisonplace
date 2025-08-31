@@ -1,10 +1,10 @@
 <script lang="ts">
-  let { ...props } = $props<{
-    class?: string
-  }>()
+  let className = ''
+
+  export { className as class }
 </script>
 
-<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" {...props}>
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" class={className}>
   <g class="fill-bison-theme-fg">
     <polygon
       class="fill-bison-theme-bg"
