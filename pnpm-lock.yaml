@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/orbitron':
-        specifier: ^5.0.18
-        version: 5.0.18
+      '@fontsource/libre-baskerville':
+        specifier: ^5.2.10
+        version: 5.2.10
       svelte:
         specifier: ^5.38.1
         version: 5.38.6
@@ -313,8 +313,8 @@ packages:
     resolution: {integrity: sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@fontsource/orbitron@5.0.18':
-    resolution: {integrity: sha512-wWBZbGQuMa9l2QnwZiPVDupkxQedNxhWlcrEUsCZL5U5apMyAg1JQZBJXn6vppwqSe5NR39l0IepfUGhr7h12A==}
+  '@fontsource/libre-baskerville@5.2.10':
+    resolution: {integrity: sha512-Y/bGj4cOdWhAxU4+sBPen3MB5Og3t/WvezVL+05CJ7cvhDQUKpQFUuw/hm1IQKRc9u0lWs8VP2MKDOK2uQtloQ==}
 
   '@humanwhocodes/config-array@0.11.13':
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -1986,7 +1986,7 @@ snapshots:
 
   '@eslint/js@8.56.0': {}
 
-  '@fontsource/orbitron@5.0.18': {}
+  '@fontsource/libre-baskerville@5.2.10': {}
 
   '@humanwhocodes/config-array@0.11.13':
     dependencies:
