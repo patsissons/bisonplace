@@ -77,51 +77,53 @@
       </a>
     {/each}
   </nav>
-  <div class="place-content-center px-2 h-full overflow-y-auto">
-    {#if selectedMenu}
-      {@const selectedMenuPath = selectedMenu.path || `${selectedMenuId}.png`}
-      {@const selectedMenuSheetPath = selectedMenu.sheet
-        ? `${selectedMenuId}-sheet.png`
-        : selectedMenu.sheetPath}
+  {#key selectedMenuId}
+    <div class="place-content-center px-2 h-full overflow-y-auto">
+      {#if selectedMenu}
+        {@const selectedMenuPath = selectedMenu.path || `${selectedMenuId}.png`}
+        {@const selectedMenuSheetPath = selectedMenu.sheet
+          ? `${selectedMenuId}-sheet.png`
+          : selectedMenu.sheetPath}
 
-      {#if selectedMenuSheetPath}
-        <div
-          class="relative transition-transform duration-700 [transform-style:preserve-3d] lg:hover:[transform:rotateY(180deg)]"
-        >
-          <a
-            class="relative [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
-            href="/menus/{selectedMenuPath}"
+        {#if selectedMenuSheetPath}
+          <div
+            class="relative transition-transform duration-700 [transform-style:preserve-3d] lg:hover:[transform:rotateY(180deg)]"
           >
+            <a
+              class="relative [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
+              href="/menus/{selectedMenuPath}"
+            >
+              <img
+                class="min-w-[320px]"
+                src="/menus/{selectedMenuPath}"
+                alt="{selectedMenu.name || selectedMenuId} menu"
+              />
+            </a>
+            <a
+              class="absolute top-0 left-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)]"
+              href="/menus/{selectedMenuSheetPath}"
+            >
+              <img
+                class="min-w-[320px]"
+                src="/menus/{selectedMenuSheetPath}"
+                alt="{selectedMenu.name || selectedMenuId} sheet"
+              />
+            </a>
+          </div>
+        {:else}
+          <a href="/menus/{selectedMenuPath}">
             <img
               class="min-w-[320px]"
               src="/menus/{selectedMenuPath}"
               alt="{selectedMenu.name || selectedMenuId} menu"
             />
           </a>
-          <a
-            class="absolute top-0 left-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)]"
-            href="/menus/{selectedMenuSheetPath}"
-          >
-            <img
-              class="min-w-[320px]"
-              src="/menus/{selectedMenuSheetPath}"
-              alt="{selectedMenu.name || selectedMenuId} sheet"
-            />
-          </a>
-        </div>
+        {/if}
       {:else}
-        <a href="/menus/{selectedMenuPath}">
-          <img
-            class="min-w-[320px]"
-            src="/menus/{selectedMenuPath}"
-            alt="{selectedMenu.name || selectedMenuId} menu"
-          />
-        </a>
+        <div class="grid place-content-center px-2">
+          <p class="italic">Loading menu...</p>
+        </div>
       {/if}
-    {:else}
-      <div class="grid place-content-center px-2">
-        <p class="italic">Loading menu...</p>
-      </div>
-    {/if}
-  </div>
+    </div>
+  {/key}
 </section>

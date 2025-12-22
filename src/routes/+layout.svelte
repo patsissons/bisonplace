@@ -26,7 +26,7 @@
       <slot />
     </main>
 
-    <footer class="text-center px-2 py-0.5 mb-1">
+    <footer class="text-center px-2 py-0.5">
       <a
         class="text-bison-theme-bg text-xl font-bison hover:bg-bison-theme-fg/40 hover:text-bison-theme-bg px-2 py-0.5 rounded"
         href={isMenusPage ? '/' : '/menus'}
