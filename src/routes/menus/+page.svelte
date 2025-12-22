@@ -9,10 +9,11 @@
     name?: string
     path?: string
     sheetPath?: string
+    sheet?: boolean
   }
   type MenuId = keyof typeof data.menus
 
-  const menuIds = Object.keys(data.menus) as MenuId[]
+  const menuIds = Object.keys(data.menus).sort().reverse() as MenuId[]
   let selectedMenuId: MenuId | undefined
 
   $: selectedMenu = selectedMenuId ? menuById(selectedMenuId) : undefined
@@ -30,7 +31,7 @@
 
   onMount(() => {
     if (!selectedMenuId) {
-      selectedMenuId = data.current as MenuId
+      selectedMenuId = (data.current || menuIds[0]) as MenuId
     }
   })
 
@@ -59,7 +60,7 @@
   class="container mx-auto grid grid-rows-[auto_auto_1fr] place-items-center gap-2 h-full"
 >
   <h3
-    class="text-bison-theme-bg text-5xl xs:text-6xl sm:text-7xl font-orbitron font-semibold brightness-50"
+    class="text-bison-theme-bg text-5xl xs:text-6xl sm:text-7xl font-bison font-semibold brightness-50"
   >
     Menus
   </h3>
@@ -79,7 +80,9 @@
   <div class="place-content-center px-2 h-full overflow-y-auto">
     {#if selectedMenu}
       {@const selectedMenuPath = selectedMenu.path || `${selectedMenuId}.png`}
-      {@const selectedMenuSheetPath = selectedMenu.sheetPath}
+      {@const selectedMenuSheetPath = selectedMenu.sheet
+        ? `${selectedMenuId}-sheet.png`
+        : selectedMenu.sheetPath}
 
       {#if selectedMenuSheetPath}
         <div
