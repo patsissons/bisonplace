@@ -86,29 +86,34 @@
           : selectedMenu.sheetPath}
 
         {#if selectedMenuSheetPath}
-          <div
-            class="relative transition-transform duration-700 [transform-style:preserve-3d] lg:hover:[transform:rotateY(180deg)]"
-          >
-            <a
-              class="relative [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
-              href="/menus/{selectedMenuPath}"
+          <div class="relative">
+            <div
+              class="relative transition-transform duration-700 [transform-style:preserve-3d] border-red-500 has-[~_.peer:hover]:[transform:rotateY(180deg)]"
             >
-              <img
-                class="min-w-[320px]"
-                src="/menus/{selectedMenuPath}"
-                alt="{selectedMenu.name || selectedMenuId} menu"
-              />
-            </a>
-            <a
-              class="absolute top-0 left-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)]"
-              href="/menus/{selectedMenuSheetPath}"
-            >
-              <img
-                class="min-w-[320px]"
-                src="/menus/{selectedMenuSheetPath}"
-                alt="{selectedMenu.name || selectedMenuId} sheet"
-              />
-            </a>
+              <a
+                class="relative [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
+                href="/menus/{selectedMenuPath}"
+              >
+                <img
+                  class="min-w-[320px]"
+                  src="/menus/{selectedMenuPath}"
+                  alt="{selectedMenu.name || selectedMenuId} menu"
+                />
+              </a>
+              <a
+                class="absolute top-0 left-0 [backface-visibility:hidden] [-webkit-backface-visibility:hidden] [transform:rotateY(180deg)]"
+                href="/menus/{selectedMenuSheetPath}"
+              >
+                <img
+                  class="min-w-[320px]"
+                  src="/menus/{selectedMenuSheetPath}"
+                  alt="{selectedMenu.name || selectedMenuId} sheet"
+                />
+              </a>
+            </div>
+            <div
+              class="absolute top-0 left-[45%] w-[10%] h-full z-10 cursor-pointer hover-target peer"
+            ></div>
           </div>
         {:else}
           <a href="/menus/{selectedMenuPath}">
