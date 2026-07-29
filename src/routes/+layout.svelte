@@ -37,6 +37,14 @@
           Menus
         {/if}
       </a>
+      <a
+        class="text-bison-theme-bg text-xl font-bison hover:bg-bison-theme-fg/40 hover:text-bison-theme-bg px-2 py-0.5 rounded"
+        href="https://hello-there.patsissons.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        About me
+      </a>
     </footer>
   </div>
 </div>
