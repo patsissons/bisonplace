@@ -2,10 +2,16 @@
   import { page } from '$app/stores'
   import '$lib/styles/app.css'
 
+  const pages = [
+    { href: '/', label: 'Home' },
+    { href: '/menus', label: 'Menus' },
+    { href: '/rum', label: 'Rum Roadmap' },
+  ]
+
   // this is broken for some reason
   // see: https://github.com/sveltejs/eslint-plugin-svelte/issues/652
   // eslint-disable-next-line svelte/valid-compile
-  $: isMenusPage = $page.route.id === '/menus'
+  $: footerLinks = pages.filter(({ href }) => href !== $page.route.id)
 </script>
 
 <div
@@ -26,17 +32,15 @@
       <slot />
     </main>
 
-    <footer class="text-center px-2 py-0.5">
-      <a
-        class="text-bison-theme-bg text-xl font-bison hover:bg-bison-theme-fg/40 hover:text-bison-theme-bg px-2 py-0.5 rounded"
-        href={isMenusPage ? '/' : '/menus'}
-      >
-        {#if isMenusPage}
-          Home
-        {:else}
-          Menus
-        {/if}
-      </a>
+    <footer class="flex flex-wrap justify-center gap-x-1 px-2 py-0.5">
+      {#each footerLinks as { href, label } (href)}
+        <a
+          class="text-bison-theme-bg text-xl font-bison hover:bg-bison-theme-fg/40 hover:text-bison-theme-bg px-2 py-0.5 rounded"
+          {href}
+        >
+          {label}
+        </a>
+      {/each}
       <a
         class="text-bison-theme-bg text-xl font-bison hover:bg-bison-theme-fg/40 hover:text-bison-theme-bg px-2 py-0.5 rounded"
         href="https://hello-there.patsissons.dev/"
