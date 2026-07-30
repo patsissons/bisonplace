@@ -49,7 +49,7 @@
   >
     <a
       class="hover:underline"
-      href="https://shamefultikiroom.com/vancouver/"
+      href="https://shamefultikiroom.com/vancouver/adventure/"
       target="_blank"
       rel="noopener noreferrer"
     >
